@@ -1,0 +1,46 @@
+/* ============================================================
+   nmorabowen / tools — design tokens
+   Palette  : Okabe-Ito (protanopia-safe; no red-dominant hues)
+   Type     : Fraunces (serif) + JetBrains Mono
+   Aesthetic: scientific monograph / lab-instrument readout
+   Extracted from the 1D Plasticity Explorer.
+   ============================================================ */
+
+:root {
+  /* --- surfaces & ink --- */
+  --ink:         #1a1a1a;   /* primary text, rules, borders   */
+  --paper:       #f4f1ea;   /* page background                */
+  --paper-warm:  #ebe6db;   /* panel / card background        */
+  --paper-press: #e3ddd0;   /* pressed / hovered surface      */
+  --muted:       #6b665e;   /* secondary text, micro-labels   */
+  --hairline:    #cdc7b9;   /* light grid lines, dividers     */
+  --rule:        #1a1a1a;   /* masthead / footer rules        */
+
+  /* --- Okabe-Ito accent palette (protanopia-safe) --- */
+  --oi-orange:     #E69F00;
+  --oi-sky:        #56B4E9;
+  --oi-green:      #009E73;  /* bluish-green            */
+  --oi-yellow:     #F0E442;
+  --oi-blue:       #0072B2;
+  --oi-vermillion: #D55E00;
+  --oi-purple:     #CC79A7;  /* reddish-purple, low red */
+
+  /* --- semantic roles --- */
+  --accent:      var(--oi-blue);
+  --accent-ok:   var(--oi-green);
+  --accent-warn: var(--oi-vermillion);
+  --link:        var(--oi-blue);
+
+  /* --- dark instrument-readout panel --- */
+  --trace-bg:  #131110;
+  --trace-fg:  #e8e4d8;
+  --trace-dim: #9b958a;
+
+  /* --- typography --- */
+  --serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --mono:  'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  /* --- layout --- */
+  --maxw:  1480px;
+  --pad-x: 36px;
+}

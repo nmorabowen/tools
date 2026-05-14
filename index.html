@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>nmorabowen / tools</title>
+<meta name="description" content="Interactive instruments for computational mechanics — plasticity, return-mapping, finite elements. Runs in the browser.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/shared/tokens.css">
+<link rel="stylesheet" href="/shared/base.css">
+
+<style>
+/* ---- landing-page tool index ---- */
+.intro { margin-bottom: 22px; }
+
+.tool-index {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+  list-style: none;
+}
+.tool-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: var(--paper-warm);
+  border: 1px solid var(--ink);
+  padding: 16px 18px 18px;
+  text-decoration: none;
+  color: var(--ink);
+  transition: background 0.12s;
+}
+.tool-card:hover { background: var(--paper-press); text-decoration: none; }
+.tool-card .tc-meta {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: flex;
+  justify-content: space-between;
+}
+.tool-card .tc-title {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: -0.01em;
+}
+.tool-card .tc-desc {
+  font-size: 14px;
+  line-height: 1.5;
+}
+.tool-card .tc-tags {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-top: 2px;
+}
+.empty-state {
+  border: 1px dashed var(--ink);
+  padding: 24px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <h1>nmorabowen / tools</h1>
+  <div class="subtitle">Interactive instruments · computational mechanics</div>
+</header>
+
+<div class="intro">
+  <p class="lede">A small collection of single-page interactive tools for teaching
+  and exploring computational mechanics — return-mapping algorithms, constitutive
+  models, finite-element behaviour. Each one is self-contained and runs entirely
+  in the browser.</p>
+</div>
+
+<!-- Tool cards: one <li><a class="tool-card" href="/folder-name/"> per tool. -->
+<ul class="tool-index">
+
+  <li><a class="tool-card" href="/plasticity-explorer/">
+    <span class="tc-meta"><span>01</span><span>&#8599;</span></span>
+    <span class="tc-title">1D Plasticity Explorer</span>
+    <span class="tc-desc">Bilinear J2 plasticity with mixed isotropic / kinematic
+    hardening. Step through the return-map algorithm with a live trace, watch the
+    elastic interval translate and expand, and run cyclic, Bauschinger, and
+    stress-ratcheting load paths.</span>
+    <span class="tc-tags">plasticity &middot; return-mapping &middot; fem</span>
+  </a></li>
+
+</ul>
+
+<footer class="colophon">
+  <span>github.com/nmorabowen/tools</span>
+  <span>palette: okabe-ito (protanopia-safe)</span>
+</footer>
+
+</body>
+</html>

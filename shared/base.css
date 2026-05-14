@@ -1,0 +1,150 @@
+/* ============================================================
+   nmorabowen / tools — base stylesheet (shared chrome)
+   Requires tokens.css. Provides the monograph layout primitives:
+   masthead, panels, badges, buttons, prose, footer.
+   Tool pages link tokens.css + base.css, then add their own.
+   ============================================================ */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-feature-settings: "ss01", "ss02";
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 28px var(--pad-x) 60px;
+}
+
+/* ---- links ---- */
+a       { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---- masthead ---- */
+header.masthead {
+  border-top: 3px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 14px 0 12px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+header.masthead h1 {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 28px;
+  letter-spacing: -0.02em;
+  font-style: italic;
+}
+header.masthead a { color: inherit; }
+header.masthead a:hover { text-decoration: none; }
+
+.subtitle {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+}
+
+/* ---- panels / cards ---- */
+.panel {
+  background: var(--paper-warm);
+  border: 1px solid var(--ink);
+  padding: 16px 18px 14px;
+  position: relative;
+}
+.panel-title {
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+/* ---- badges ---- */
+.badge {
+  font-family: var(--mono);
+  font-size: 10px;
+  padding: 2px 7px;
+  border: 1px solid currentColor;
+  border-radius: 2px;
+}
+.badge.ok   { color: var(--accent-ok); }
+.badge.warn { color: var(--accent-warn); }
+
+/* ---- buttons ---- */
+button, .button {
+  font-family: var(--mono);
+  font-size: 11px;
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  padding: 5px 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: background 0.12s, color 0.12s;
+  display: inline-block;
+}
+button:hover, .button:hover {
+  background: var(--ink);
+  color: var(--paper);
+  text-decoration: none;
+}
+button.active   { background: var(--ink); color: var(--paper); }
+button:disabled { opacity: 0.35; cursor: not-allowed; }
+
+/* ---- inline mono tag (for math symbols in headings) ---- */
+.var-tag {
+  font-family: var(--mono);
+  font-size: 0.85em;
+  background: var(--paper);
+  padding: 1px 5px;
+  border: 1px solid var(--ink);
+  border-radius: 2px;
+}
+
+/* ---- prose ---- */
+p.lede {
+  font-size: 16px;
+  max-width: 72ch;
+  margin-bottom: 6px;
+}
+.muted { color: var(--muted); }
+
+/* ---- footer / colophon ---- */
+footer.colophon {
+  margin-top: 24px;
+  padding-top: 14px;
+  border-top: 1px solid var(--rule);
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+/* ---- responsive ---- */
+@media (max-width: 960px) {
+  body { padding-left: 20px; padding-right: 20px; }
+  header.masthead h1 { font-size: 24px; }
+}
